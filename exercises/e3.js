@@ -1,4 +1,4 @@
-import { data } from "../data/data";
+import { data } from "../data/data.js";
 
 // SPACE DATA EXERCISE 3
 // Return an array of all Planets' average temperatures
@@ -6,7 +6,11 @@ import { data } from "../data/data";
 
 export function getAllAverageTemperatures(data) {
   // Your code goes here...
+  let averageTemperatures = data.planets.map(planet => planet.avgTemp);
+  return averageTemperatures;
 }
+
+console.log(getAllAverageTemperatures(data));
 
 
 

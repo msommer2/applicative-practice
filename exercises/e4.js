@@ -1,4 +1,4 @@
-import { data } from "../data/data";
+import { data } from "../data/data.js";
 
 // SPACE DATA EXERCISE 4
 // Return an array of Planets' names with gravity less than 10
@@ -6,8 +6,12 @@ import { data } from "../data/data";
 
 export function getPlanetsWithLowGravity(data) {
   // Your code goes here...
+  let lowPlanetGravity = data.planets.filter(planet => planet.gravity < 10);
+  let planetNames = lowPlanetGravity.map(planet => planet.name);
+  return planetNames;
 }
 
+console.log(getPlanetsWithLowGravity(data));
 
 
 // === TEST YOURSELF ===

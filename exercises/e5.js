@@ -1,12 +1,19 @@
-import { data } from "../data/data";
+import { data } from "../data/data.js";
 
 // SPACE DATA EXERCISE 5
-// Return an array with all Planets' names with a massValue greater or equal to a given number (1-7)
+// Return an array with all Planets' names with a massValue greater 
+// or equal to a given number (1-7)
 // Return example: ['name1', 'name2', ... , 'nameN']
 
 export function getPlanetsWithMassValue(data, number) {
   // Your code goes here...
+  let planetNames = data.planets
+    .filter(planet => planet.mass.massValue >= number)
+    .map(planet => planet.name);
+  return planetNames;
 }
+
+console.log(getPlanetsWithMassValue(data, 2));
 
 
 

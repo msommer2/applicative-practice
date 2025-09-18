@@ -1,4 +1,4 @@
-import { data } from "../data/data";
+import { data } from "../data/data.js";
 
 // SPACE DATA EXERCISE 8
 // Return a Planet name by a given moon name
@@ -6,7 +6,15 @@ import { data } from "../data/data";
 
 export function findPlanetNameByMoon(data, moonName) {
   // Your code goes here...
+  for (let planet of data.planets) {
+    if (planet.moons && planet.moons.map(moon => moon.toLowerCase()).includes(moonName.toLowerCase())) {
+      return planet.name;
+    }
+  }
+  return null;
 }
+
+console.log(findPlanetNameByMoon(data, "rosalinde"));
 
 
 
