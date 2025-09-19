@@ -1,4 +1,4 @@
-import { data } from "../data/data";
+import { data } from "../data/data.js";
 
 // SPACE DATA EXERCISE 9
 // Return the data object of the planet "Earth"
@@ -6,7 +6,15 @@ import { data } from "../data/data";
 
 export function getEarthData(data) {
   // Your code goes here...
+  for (let planet of data.planets) {
+    if (planet.name === "Earth") {
+      return planet;
+    }
+  }
+  return null;
 }
+
+console.log(getEarthData(data));
 
 
 

@@ -1,4 +1,4 @@
-import { data } from "../data/data";
+import { data } from "../data/data.js";
 
 // SPACE DATA EXERCISE 11
 // Return an array of Planets' names with less than 10 moons
@@ -7,7 +7,18 @@ import { data } from "../data/data";
 
 export function lowMoonsPlanets(data) {
   // Your code goes here...
+  let result = [];
+  for (let planet of data.planets) {
+    if (planet.moonsCount < 10) {
+      result.push(planet.name);
+    } else if (planet.moonsCount === undefined) {
+      result.push(planet.name);
+    }
+  }
+  return result;
 }
+
+console.log(lowMoonsPlanets(data));
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-11"

@@ -1,4 +1,4 @@
-import { data } from "../data/data";
+import { data } from "../data/data.js";
 
 // SPACE DATA EXERCISE 15
 // Return an array of Planets' names without moons
@@ -6,7 +6,17 @@ import { data } from "../data/data";
 
 export function getPlanetsWithNoMoons(data) {
   // Your code goes here...
+  let result = [];
+  for (let planet of data.planets) {
+    if (planet.moonsCount === 0 || planet.moonsCount === undefined) {
+      result.push(planet.name);
+    }
+  }
+  return result;
+
 }
+
+console.log(getPlanetsWithNoMoons(data));
 
 
 

@@ -1,4 +1,4 @@
-import { data } from "../data/data";
+import { data } from "../data/data.js";
 
 // SPACE DATA EXERCISE 10
 // Return a given asteroid object of data
@@ -6,9 +6,15 @@ import { data } from "../data/data";
 
 export function getAsteroidDataByName(data, asteroidName) {
   // Your code goes here...
+  for (let asteroid of data.asteroids) {
+    if (asteroid.name.toLowerCase().includes(asteroidName.toLowerCase())) {
+      return asteroid;
+    }
+  }
+  return null;
 }
 
-
+console.log(getAsteroidDataByName(data, "vesta"));
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-10"
