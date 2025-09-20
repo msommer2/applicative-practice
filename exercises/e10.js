@@ -6,12 +6,13 @@ import { data } from "../data/data.js";
 
 export function getAsteroidDataByName(data, asteroidName) {
   // Your code goes here...
-  for (let asteroid of data.asteroids) {
-    if (asteroid.name.toLowerCase().includes(asteroidName.toLowerCase())) {
+  return data.asteroids.find(asteroid => {
+    if (asteroid.name
+      .toLowerCase()
+      .includes(asteroidName.toLowerCase())) {
       return asteroid;
     }
-  }
-  return null;
+  });
 }
 
 console.log(getAsteroidDataByName(data, "vesta"));

@@ -6,12 +6,14 @@ import { data } from "../data/data.js";
 
 export function findPlanetNameByMoon(data, moonName) {
   // Your code goes here...
-  for (let planet of data.planets) {
-    if (planet.moons && planet.moons.map(moon => moon.toLowerCase()).includes(moonName.toLowerCase())) {
-      return planet.name;
+  return data.planets.find(planet => {
+    if (planet.moons) {
+      if (planet.moons.find((moon) => 
+        moon.toLowerCase() === moonName.toLowerCase())) {
+        return planet.name;
+      }
     }
-  }
-  return null;
+  }).name;
 }
 
 console.log(findPlanetNameByMoon(data, "rosalinde"));
